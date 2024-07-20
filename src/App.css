@@ -1,38 +1,131 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+CU:wght@100..400&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+.noteitem-card :hover {
+    border-color: #3498db;
+    transition: ease 0.1s;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.headings{
+    color: aliceblue;
+    font-family: "Ubuntu", sans-serif;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.form-label{
+    color: white;
+    font-family: "Ubuntu", sans-serif;
+    font-weight: bold;
+}
+.nav-link.active {
+    color: #3498db; /* Change text color for active link */
+    font-weight: bold; /* Optional: make the active link text bold */
+    border-bottom: 2px solid #3498db; /* Optional: add a bottom border to highlight */
   }
+  
+.nav-link:hover {
+    color: #3498db; /* Change text color on hover for non-active links */
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar-brand{
+    font-family: "Playwrite CU", cursive;
+    font-weight: bold;
 }
+/*----------------------------Readmore component -----------------------------*/
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.note-container {
+    margin-top: 10px;
+    max-width: 800px;
+   margin: 20px auto 0 auto; /* Add top margin here */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
-  to {
-    transform: rotate(360deg);
+  
+  .note-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #333;
   }
+  
+  .note-content {
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .loading {
+    text-align: center;
+    font-size: 1.5em;
+    color: #888;
+  }
+  
+
+
+/*----------------background Animation--------------------*/
+
+body {
+    margin: auto;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    overflow: auto;
+    background: linear-gradient(315deg, rgba(101,0,94,1) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgba(255,25,25,1) 98%);
+    animation: gradient 15s ease infinite;
+    background-size: 400% 400%;
+    background-attachment: fixed;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+.wave {
+    background: rgb(255 255 255 / 25%);
+    border-radius: 1000% 1000% 0 0;
+    position: fixed;
+    width: 200%;
+    height: 12em;
+    animation: wave 10s -3s linear infinite;
+    transform: translate3d(0, 0, 0);
+    opacity: 0.8;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+    bottom: -1.25em;
+    animation: wave 18s linear reverse infinite;
+    opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+    bottom: -2.5em;
+    animation: wave 20s -1s reverse infinite;
+    opacity: 0.9;
+}
+
+@keyframes wave {
+    2% {
+        transform: translateX(1);
+    }
+
+    25% {
+        transform: translateX(-25%);
+    }
+
+    50% {
+        transform: translateX(-50%);
+    }
+
+    75% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(1);
+    }
 }
